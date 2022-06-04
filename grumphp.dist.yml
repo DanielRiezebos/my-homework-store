@@ -1,0 +1,19 @@
+grumphp:
+    tasks:
+        phpcs:
+            standard: Magento2
+            whitelist_patterns:
+              - app/code
+              - app/design
+            triggered_by:
+              - php
+              - phtml
+        phpmd:
+            exclude: ['vendor']
+            triggered_by:
+              - php
+              - phtml
+        psalm:
+            config: psalm.xml
+            report: ~
+

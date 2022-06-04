@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<psalm
+    errorLevel="1"
+    resolveFromConfigFile="true"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="https://getpsalm.org/schema/config"
+    xsi:schemaLocation="https://getpsalm.org/schema/config vendor/vimeo/psalm/config.xsd"
+    autoloader="app/etc/NonComposerComponentRegistration.php"
+>
+    <projectFiles>
+        <directory name="app/code"/>
+        <ignoreFiles>
+            <directory name="generated/code"/>
+            <directory name="setup/src/Magento/Setup"/>
+            <directory name="setup/src/Zend/Mvc/Controller"/>
+            <directory name="vendor"/>
+        </ignoreFiles>
+    </projectFiles>
+    <issueHandlers>
+        <UndefinedMagicMethod errorLevel="suppress"/>
+        <ImplicitToStringCast errorLevel="suppress"/>
+    </issueHandlers>
+    <plugins>
+        <pluginClass class="Visma\Magento2Psalm\Plugin"/>
+    </plugins>
+</psalm>
+
