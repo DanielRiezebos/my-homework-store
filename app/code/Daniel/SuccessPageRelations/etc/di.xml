@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Magento\Catalog\Model\ProductLink\CollectionProvider\LinkedMapProvider"
+                type="Daniel\SuccessPageRelations\Model\ProductLink\CollectionProvider\LinkedMapProvider" />
+    <preference for="Magento\Catalog\Model\Product"
+                type="Daniel\SuccessPageRelations\Model\Product" />
+    <type name="Magento\Catalog\Model\Product\LinkTypeProvider">
+        <arguments>
+            <argument name="linkTypes" xsi:type="array">
+                <item name="related" xsi:type="const">Magento\Catalog\Model\Product\Link::LINK_TYPE_RELATED</item>
+                <item name="crosssell" xsi:type="const">Magento\Catalog\Model\Product\Link::LINK_TYPE_CROSSSELL</item>
+                <item name="upsell" xsi:type="const">Magento\Catalog\Model\Product\Link::LINK_TYPE_UPSELL</item>
+                <item name="success_page" xsi:type="const">Daniel\SuccessPageRelations\Model\Product\Link::LINK_TYPE_SUCCESSPAGE</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Catalog\Model\ProductLink\CollectionProvider">
+        <arguments>
+            <argument name="providers" xsi:type="array">
+                <item name="crosssell" xsi:type="object">Magento\Catalog\Model\ProductLink\CollectionProvider\Crosssell</item>
+                <item name="upsell" xsi:type="object">Magento\Catalog\Model\ProductLink\CollectionProvider\Upsell</item>
+                <item name="related" xsi:type="object">Magento\Catalog\Model\ProductLink\CollectionProvider\Related</item>
+                <item name="success_page" xsi:type="object">Daniel\SuccessPageRelations\Model\ProductLink\CollectionProvider\SuccessPage</item>
+            </argument>
+            <argument name="mapProviders" xsi:type="array">
+                <item name="linked" xsi:type="object">Magento\Catalog\Model\ProductLink\CollectionProvider\LinkedMapProvider</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

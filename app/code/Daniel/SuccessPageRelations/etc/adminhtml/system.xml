@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="daniel" translate="label" sortOrder="150">
+            <label>Daniel</label>
+        </tab>
+        <section id="successpagerelations" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="10" translate="label">
+            <label>Success Page Relations</label>
+            <tab>daniel</tab>
+            <resource>Daniel_SuccessPageRelations::access</resource>
+            <group id="config" translate="label comment" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Display Success Page Relations Configuration</label>
+                <comment>Lorem ipsum dolor sit amet. Boe ba bie ba biebediebiep. Da pacem domine in diebus nostris.</comment>
+                <field id="display" translate="label" type="select" showInDefault="1" canRestore="1">
+                    <label>Display</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

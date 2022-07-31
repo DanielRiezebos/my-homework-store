@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Magento\Catalog\Ui\DataProvider\Product\Form\Modifier\Related"
+                type="\Daniel\SuccessPageRelations\Ui\DataProvider\Product\Form\Modifier\Related" />
+    <preference for="Magento\Catalog\Model\Product\Link"
+                type="Daniel\SuccessPageRelations\Model\Product\Link" />
+</config>

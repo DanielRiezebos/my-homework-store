@@ -1,0 +1,16 @@
+<?php
+/** @var Daniel\SuccessPageRelations\Block\SuccessPageRelations $block */
+if ($block->shouldDisplay()):
+?>
+<div>
+    <p><?= __('One might be interested in: ') ?></p>
+    <ul>
+        <?php
+            /** @var Daniel\SuccessPageRelations\Model\Product $successPageRelatedProduct */
+            foreach ($block->getSuccessPageRelatedProducts() as $successPageRelatedProduct) {
+                echo '<li><a href="'. $successPageRelatedProduct->getProductUrl() .'">'.$successPageRelatedProduct->getName().'</a></li>';
+            }
+        ?>
+    </ul>
+</div>
+<?php endif; ?>
