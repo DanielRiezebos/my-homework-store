@@ -16,6 +16,9 @@
                     <label>Display</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
+                <field id="footer_text" translate="label" type="textarea" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Footer text</label>
+                </field>
             </group>
         </section>
     </system>

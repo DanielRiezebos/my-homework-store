@@ -11,6 +11,7 @@ class Config
 {
     private $scopeConfig;
     private const CONFIG_DISPLAY_PATH = 'successpagerelations/config/display';
+    private const FOOTER_TEXT_PATH = 'successpagerelations/config/footer_text';
 
     public function __construct(ScopeConfigInterface $scopeConfig)
     {
@@ -20,5 +21,10 @@ class Config
     public function display()
     {
         return $this->scopeConfig->getValue(self::CONFIG_DISPLAY_PATH, ScopeInterface::SCOPE_STORE);
+    }
+
+    public function getFooterText()
+    {
+        return $this->scopeConfig->getValue(self::FOOTER_TEXT_PATH, ScopeInterface::SCOPE_STORE);
     }
 }

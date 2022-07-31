@@ -49,4 +49,9 @@ class SuccessPageRelations extends Template
     {
         return $this->config->display();
     }
+
+    public function getFooterText()
+    {
+        return $this->config->getFooterText();
+    }
 }
