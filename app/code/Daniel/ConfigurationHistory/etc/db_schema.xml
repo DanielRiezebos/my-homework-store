@@ -1,0 +1,10 @@
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="core_config_history" engine="innodb" resource="default" comment="Records changes to core_config_data">
+        <column xsi:type="int" name="entity_id" unsigned="true" nullable="false" comment="Entity Id"/>
+        <column xsi:type="varchar" name="message" length="255" nullable="false" comment="Config change record"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="entity_id"/>
+        </constraint>
+    </table>
+</schema>
