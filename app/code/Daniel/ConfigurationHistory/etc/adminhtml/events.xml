@@ -1,6 +1,6 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
     <event name="admin_system_config_save">
-        <observer name="detect_config_change" instance="Daniel\ConfigurationHistory\Observer\ConfigChangeObserver"/>
+        <observer name="detect_config_change" instance="Daniel\ConfigurationHistory\Observer\ConfigChangeObserver" disabled="true"/>
     </event>
 </config>

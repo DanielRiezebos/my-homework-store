@@ -1,0 +1,5 @@
+<config>
+    <type name="Magento\Config\Controller\Adminhtml\System\Config\Save">
+        <plugin name="around_core_config_save" type="Daniel\ConfigurationHistory\Plugin\ConfigChangeSave" sortOrder="1" />
+    </type>
+</config>
