@@ -18,6 +18,7 @@ class ConfigChangeSave
     private CoreConfigHistoryResourceFactory $coreConfigHistoryResourceFactory;
     private ScopeConfigInterface $scopeConfig;
     private RedirectFactory $redirectFactory;
+    private string $topLevel = '';
 
     public function __construct(
         CoreConfigHistoryFactory $coreConfigHistoryFactory,
@@ -66,10 +67,14 @@ class ConfigChangeSave
         $outputArray = [];
 
         foreach ($inputArray as $key => $value) {
+            if (is_null($upperKey)) {
+                $this->topLevel = $key;
+            }
+
             if (is_array($value)) {
                 $outputArray = array_merge($outputArray, $this->flattenArray($value, $key));
             } else {
-                $outputArray[$upperKey.'/'.$key] = $value;
+                $outputArray[$this->topLevel . '/' . $upperKey . '/' . $key] = $value;
             }
         }
 
