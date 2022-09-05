@@ -11,6 +11,8 @@ use Daniel\ConfigurationHistory\Model\ResourceModel\CoreConfigHistoryFactory as 
 use Magento\Framework\Controller\Result\Redirect;
 use Magento\Framework\Controller\Result\RedirectFactory;
 use Magento\Framework\Exception\AlreadyExistsException;
+use Magento\Backend\Model\Auth\Session as AuthSession;
+use Magento\Store\Model\StoreManagerInterface;
 
 class ConfigChangeSave
 {
@@ -19,17 +21,23 @@ class ConfigChangeSave
     private ScopeConfigInterface $scopeConfig;
     private RedirectFactory $redirectFactory;
     private string $topLevel = '';
+    private AuthSession $session;
+    private StoreManagerInterface $storeManager;
 
     public function __construct(
         CoreConfigHistoryFactory $coreConfigHistoryFactory,
         CoreConfigHistoryResourceFactory $coreConfigHistoryResourceFactory,
         ScopeConfigInterface $scopeConfig,
-        RedirectFactory $redirectFactory
+        RedirectFactory $redirectFactory,
+        AuthSession $session,
+        StoreManagerInterface $storeManager
     ) {
         $this->coreConfigHistoryFactory = $coreConfigHistoryFactory;
         $this->coreConfigHistoryResourceFactory = $coreConfigHistoryResourceFactory;
         $this->scopeConfig = $scopeConfig;
         $this->redirectFactory = $redirectFactory;
+        $this->session = $session;
+        $this->storeManager = $storeManager;
     }
 
     /**
@@ -46,9 +54,10 @@ class ConfigChangeSave
         foreach ($beforeSaveConfig as $key => $value) {
             if ($value != $afterSaveConfig[$key]) {
                 $moment = date('Y-m-d h:i:s');
+                $user = $this->session->getUser()->getUserName();
                 $writer->save(
                     $this->coreConfigHistoryFactory->create()
-                        ->setMessage("On $moment $key changed from '$value' to '$afterSaveConfig[$key]'")
+                        ->setMessage("On $moment the user $user changed $key from '$value' to '$afterSaveConfig[$key]'")
                 );
             }
         }
