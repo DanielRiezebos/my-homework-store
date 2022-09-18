@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Daniel_ConfigurationHistory::configurationhistory" title="History"  module="Daniel_ConfigurationHistory" sortOrder="10" dependsOnModule="Daniel_ConfigurationHistory" action="confighistory/confighistory/index" parent="Magento_Backend::stores_settings" resource="Daniel_ConfigurationHistory::configurationhistory"/>
+    </menu>
+</config>
