@@ -21,6 +21,7 @@
         }
     },
     "require": {
+        "danielriezebos/configurationhistory": "^1.0",
         "deployer/deployer": "^6.8",
         "jalogut/magento2-deployer-plus": "^2.8",
         "magento/composer-root-update-plugin": "^1.1",

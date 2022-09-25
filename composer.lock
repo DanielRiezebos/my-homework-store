@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "05bc2818ab22f894dfba9e3b91c21590",
+    "content-hash": "b48c1e029953f3dcc58fec9d32d21b50",
     "packages": [
         {
             "name": "2tvenom/cborencode",
@@ -1437,6 +1437,49 @@
                 "source": "https://github.com/cweagans/composer-patches/tree/1.7.2"
             },
             "time": "2022-01-25T19:21:20+00:00"
+        },
+        {
+            "name": "danielriezebos/configurationhistory",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/DanielRiezebos/configurationhistory.git",
+                "reference": "1f75bc34e3d98722871b6357aa67e71721251ed0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/DanielRiezebos/configurationhistory/zipball/1f75bc34e3d98722871b6357aa67e71721251ed0",
+                "reference": "1f75bc34e3d98722871b6357aa67e71721251ed0",
+                "shasum": ""
+            },
+            "require": {
+                "magento/product-community-edition": "^2"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Daniel\\ConfigurationHistory\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniël Riezebos",
+                    "email": "danielriezebos@outlook.com"
+                }
+            ],
+            "description": "Trust but verify - See Who changed What, When & How in the Magento 2 configuration.",
+            "support": {
+                "issues": "https://github.com/DanielRiezebos/configurationhistory/issues",
+                "source": "https://github.com/DanielRiezebos/configurationhistory/tree/1.0.1"
+            },
+            "time": "2022-09-25T12:50:07+00:00"
         },
         {
             "name": "dasprid/enum",
