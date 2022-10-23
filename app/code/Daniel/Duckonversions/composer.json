@@ -1,0 +1,20 @@
+{
+  "name": "daniel/module-duckonversions",
+  "version": "1.0.0",
+  "description": "This module has gone quackers! 🦆",
+  "type": "magento2-module",
+  "require": {
+    "magento/framework": "*"
+  },
+  "license": [
+    "Massachusetts Institute of Technology License (MITL)"
+  ],
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Daniel\\Duckonversions\\": ""
+    }
+  }
+}
