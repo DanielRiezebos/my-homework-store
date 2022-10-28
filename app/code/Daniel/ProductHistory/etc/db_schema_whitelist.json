@@ -1,0 +1,14 @@
+{
+  "catalog_product_entity_history": {
+    "column": {
+      "entity_id": true,
+      "message": true
+    },
+    "index": {
+      "CATALOG_PRODUCT_ENTITY_HISTORY_ENTITY_ID": true
+    },
+    "constraint": {
+      "PRIMARY": true
+    }
+  }
+}

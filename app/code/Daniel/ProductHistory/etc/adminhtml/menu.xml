@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Daniel_ProductHistory::producthistory" title="History" module="Daniel_ProductHistory" sortOrder="10" dependsOnModule="Daniel_ProductHistory" action="producthistory/producthistory/index" parent="Magento_Catalog::catalog" resource="Daniel_ProductHistory::producthistory"/>
+    </menu>
+</config>

@@ -326,6 +326,7 @@ return [
         'Amazon_Login' => 1,
         'Amazon_Payment' => 1,
         'AvS_ScopeHint' => 1,
+        'Daniel_ProductHistory' => 1,
         'Dotdigitalgroup_Email' => 1,
         'Dotdigitalgroup_Chat' => 1,
         'Dotdigitalgroup_ChatGraphQl' => 1,
