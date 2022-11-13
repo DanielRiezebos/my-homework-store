@@ -16,7 +16,7 @@ use Zend_Validate_Exception;
 class InstallData implements InstallDataInterface
 {
     private EavSetupFactory $eavSetupFactory;
-    private const ATTRIBUTE_CODE = 'ducks';
+    public const ATTRIBUTE_CODE = 'ducks';
 
     public function __construct(EavSetupFactory $eavSetupFactory)
     {
@@ -38,6 +38,7 @@ class InstallData implements InstallDataInterface
                 'input' => 'text',
                 'group' => 'General',
                 'label' => 'Weight in Ducks',
+                'system' => false,
                 'backend' => 'Magento\Catalog\Model\Product\Attribute\Backend\Weight',
                 'frontend' => '',
                 'source' => '',
@@ -45,8 +46,10 @@ class InstallData implements InstallDataInterface
                 'visible' => true,
                 'required' => false,
                 'is_used_in_grid' => true,
+                'visible_on_front' => true,
                 'is_visible_in_grid' => true,
                 'is_filterable_in_grid' => true,
+                'used_in_product_listing' => true,
                 'sort_order' => 42
             ]
         );
