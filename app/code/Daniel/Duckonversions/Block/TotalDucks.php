@@ -6,36 +6,26 @@ namespace Daniel\Duckonversions\Block;
 
 use Magento\Framework\View\Element\Template;
 use Magento\Checkout\Model\Session;
-use Daniel\Duckonversions\Setup\InstallData as DuckAttribute;
-use Magento\Quote\Model\Quote\Item;
+use Daniel\Duckonversions\Model\DuckAggregator;
 
 class TotalDucks extends Template
 {
     private $checkoutSession;
+    private DuckAggregator $duckAggregator;
 
     public function __construct(
         Template\Context $context,
         array $data = [],
-        Session $checkoutSession
+        Session $checkoutSession,
+        DuckAggregator $duckAggregator
     ) {
         $this->checkoutSession = $checkoutSession;
         parent::__construct($context, $data);
+        $this->duckAggregator = $duckAggregator;
     }
 
-    public function getTotalDucksFromQuote(): float
+    public function getTotalDucksFromQuote(): ?float
     {
-        $totalWeightInDucks = 0;
-        $allItemsInQuote = $this->checkoutSession->getQuote()->getAllItems();
-
-        /** @var Item $item */
-        foreach ($allItemsInQuote as $item) {
-            $qty = $item->getQty();
-            $product = $item->getProduct();
-            if ($product->getData(DuckAttribute::ATTRIBUTE_CODE) != null) {
-                $totalWeightInDucks += ($product->getData(DuckAttribute::ATTRIBUTE_CODE) * $qty);
-            }
-        }
-
-        return $totalWeightInDucks;
+        return $this->duckAggregator->getTotalDucksFromItems($this->checkoutSession->getQuote()->getAllItems());
     }
 }
