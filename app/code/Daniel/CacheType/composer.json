@@ -1,0 +1,20 @@
+{
+  "name": "daniel/module-cache-type",
+  "version": "1.0.0",
+  "description": "This module is my introduction to working with Magento 2 caching programmatically.",
+  "type": "magento2-module",
+  "require": {
+    "magento/framework": "*"
+  },
+  "license": [
+    "Proprietary"
+  ],
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Daniel\\CacheType\\": ""
+    }
+  }
+}

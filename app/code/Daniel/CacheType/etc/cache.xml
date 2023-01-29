@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Cache/etc/cache.xsd">
+    <type name="daniel_cache_type" translate="label,description" instance="Daniel\CacheType\Model\Cache\Type\CacheType">
+        <label>Daniel Custom Cache Type</label>
+        <description>This Cache Type is declared as an introduction to Magento 2 caching programmatically</description>
+    </type>
+</config>
