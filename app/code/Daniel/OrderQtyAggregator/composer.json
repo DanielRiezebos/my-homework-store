@@ -1,0 +1,21 @@
+{
+  "name": "daniel/module-order-qty-aggregator",
+  "version": "1.0.0",
+  "description": "This module adds an extension attribute that aggregates the total amount of times a product has been ordered",
+  "type": "magento2-module",
+  "require": {
+    "magento/framework": "*",
+    "magento/module-catalog": "104.0.*"
+  },
+  "license": [
+    "Proprietary"
+  ],
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Daniel\\OrderQtyAggregator\\": ""
+    }
+  }
+}
