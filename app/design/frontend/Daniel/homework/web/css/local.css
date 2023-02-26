@@ -1,0 +1,12 @@
+body {
+    background: #ebe7de;
+}
+
+a, a.link {
+    color: #b21f1f;
+}
+
+.action.primary {
+    background: #b21f1f;
+    border: 1px solid #b21f1f;
+}
