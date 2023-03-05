@@ -1,0 +1,20 @@
+{
+  "name": "daniel/module-routing",
+  "version": "1.0.0",
+  "description": "This module is a study of routing in Magento 2.",
+  "type": "magento2-module",
+  "require": {
+    "magento/framework": "*"
+  },
+  "license": [
+    "Proprietary"
+  ],
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Daniel\\Routing\\": ""
+    }
+  }
+}
